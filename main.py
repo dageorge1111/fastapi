@@ -18,9 +18,14 @@ from openai import OpenAI # for calling the OpenAI API
 import pandas as pd  # for storing text and embeddings data
 from scipy import spatial  # for calculating vector similarities for search
 import tiktoken
+from fastapi import FastAPI
+from dotenv import load_dotenv 
 
+load_dotenv() 
 
-api_key_openai = 'sk-proj-d0dNsM1S3WyjU7x5W1IhT3BlbkFJyBbDGnzqAYGQzUY8R8hl'
+app = FastAPI()
+
+api_key_openai = os.environ.get('OpenAI_Key') 
 
 client_OpenAI = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
