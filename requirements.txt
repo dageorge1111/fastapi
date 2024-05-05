@@ -1,8 +1,8 @@
-pandas~=2.0.3
+pandas>=2.0.3
 tiktoken~=0.6.0
 requests~=2.31.0
 openai~=1.25.1
-scipy~=1.13.0
+scipy>=1.10.1
 starlette~=0.37.2
 fastapi~=0.111.0
 pydantic~=2.7.1
