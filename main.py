@@ -19,11 +19,6 @@ import pandas as pd  # for storing text and embeddings data
 from scipy import spatial  # for calculating vector similarities for search
 import tiktoken
 
-client_OpenAI = OpenAI(
-    # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key=api_key_openai,
-)
-
 def load_api_key_openai(filepath):
     """ Load the API key from a JSON file. """
     with open(filepath, 'r') as file:
@@ -32,6 +27,11 @@ def load_api_key_openai(filepath):
 
 
 api_key_openai = load_api_key_openai('config.json')
+
+client_OpenAI = OpenAI(
+    # defaults to os.environ.get("OPENAI_API_KEY")
+    api_key=api_key_openai,
+)
 
 GPT_MODEL = "gpt-3.5-turbo"
 
