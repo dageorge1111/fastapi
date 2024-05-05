@@ -53,12 +53,14 @@ def get_embedding(text, model="text-embedding-3-small"):
     text = text.replace("\n", " ")
     return client_OpenAI.embeddings.create(input=[text], model=model).data[0].embedding
 
+from typing import List
+
 def strings_ranked_by_relatedness(
     query: str,
     df: str,
     relatedness_fn=lambda x, y: 1 - spatial.distance.cosine(x, y),
     top_n: int = 100
-) -> tuple[list[str], list[float]]:
+) -> tuple[List[str], List[float]]:
     df = download_csv_to_dataframe(df)
     """Returns a list of strings and relatednesses, sorted from most related to least."""
 
