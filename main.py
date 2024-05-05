@@ -20,7 +20,7 @@ from scipy import spatial  # for calculating vector similarities for search
 import tiktoken
 
 
-api_key_openai = "sk-proj-3yLvPdD0yECgyz2Jnb57T3BlbkFJF7TkX9g93HU9DM6u8E9r"
+api_key_openai = 'sk-proj-d0dNsM1S3WyjU7x5W1IhT3BlbkFJyBbDGnzqAYGQzUY8R8hl'
 
 client_OpenAI = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
