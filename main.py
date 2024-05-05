@@ -26,11 +26,9 @@ load_dotenv()
 
 app = FastAPI()
 
-api_key_openai = os.environ.get('OpenAI_Key') 
-
 client_OpenAI = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key=api_key_openai,
+    api_key=os.environ.get('OpenAI_Key') ,
 )
 
 GPT_MODEL = "gpt-3.5-turbo"
