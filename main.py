@@ -22,6 +22,7 @@ from fastapi import FastAPI
 from dotenv import load_dotenv 
 import os
 
+
 load_dotenv()  # This loads the environment variables from a .env file
 
 api_key = os.environ.get('OPENAI_API_KEY')
