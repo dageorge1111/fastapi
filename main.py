@@ -22,14 +22,17 @@ from fastapi import FastAPI
 from dotenv import load_dotenv 
 import os
 
-load_dotenv() 
+load_dotenv()  # This loads the environment variables from a .env file
+
+api_key = os.environ.get('OPENAI_API_KEY')
+print("API Key Loaded:", api_key)  # This will print the API key or None if it's not set
+
+if api_key is None:
+    raise ValueError("API Key is not set in environment variables.")
+
+client_OpenAI = OpenAI(api_key=api_key)
 
 app = FastAPI()
-
-client_OpenAI = OpenAI(
-    # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key=os.environ.get('OpenAI_Key') ,
-)
 
 GPT_MODEL = "gpt-3.5-turbo"
 
